@@ -1,0 +1,93 @@
+lavalink:
+    server:
+        bufferDurationMs: 400
+        filters:
+            channelMix: true
+            distortion: true
+            equalizer: true
+            karaoke: true
+            lowPass: true
+            rotation: true
+            timescale: true
+            tremolo: true
+            vibrato: true
+            volume: true
+        frameBufferDurationMs: 5000
+        gc-warnings: true
+        opusEncodingQuality: 10
+        password: silentm
+        playerUpdateInterval: 5
+        resamplingQuality: MEDIUM
+        soundcloudSearchEnabled: true
+        sources:
+            bandcamp: true
+            http: true
+            local: false
+            nico: true
+            soundcloud: true
+            twitch: true
+            vimeo: true
+            youtube: false
+        trackStuckThresholdMs: 10000
+        useSeekGhosting: true
+        youtubePlaylistLoadLimit: 6
+        youtubeSearchEnabled: true
+logging:
+    file:
+        path: ./logs/
+    level:
+        lavalink: INFO
+        root: INFO
+    logback:
+        rollingpolicy:
+            max-file-size: 1GB
+            max-history: 30
+    request:
+        enabled: true
+        includeClientInfo: true
+        includeHeaders: false
+        includePayload: true
+        includeQueryString: true
+        maxPayloadLength: 10000
+metrics:
+    prometheus:
+        enabled: false
+        endpoint: /metrics
+plugins:
+    lavasrc:
+        applemusic:
+            albumLoadLimit: 6
+            countryCode: US
+            mediaAPIToken: REDACTED
+            playlistLoadLimit: 6
+        flowerytts:
+            audioFormat: mp3
+            silence: 0
+            speed: 1
+            translate: false
+            voice: default voice
+        providers:
+            - ytmsearch:"%ISRC%"
+            - ytmsearch:%QUERY%
+        sources:
+            applemusic: false
+            deezer: false
+            flowerytts: false
+            spotify: true
+            yandexmusic: false
+        spotify:
+            albumLoadLimit: 6
+            clientId: 990e1ca6fcf842ecbbba9a7c6b3471ae
+            clientSecret: bc7b40c499084bd38961486bb7f511ad
+            countryCode: US
+            playlistLoadLimit: 6
+        yandexmusic:
+            accessToken: REDACTED
+sentry:
+    dsn: ""
+    environment: ""
+server:
+    address: 0.0.0.0
+    http2:
+        enabled: false
+    port: 80
